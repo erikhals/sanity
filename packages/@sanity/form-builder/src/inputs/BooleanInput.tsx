@@ -3,8 +3,10 @@ import Switch from 'part:@sanity/components/toggles/switch'
 import Checkbox from 'part:@sanity/components/toggles/checkbox'
 import ValidationStatus from 'part:@sanity/components/validation/status'
 import PatchEvent, {set} from '../PatchEvent'
-import {Type, Marker} from '../typedefs'
+import {Type, Marker, FormBuilderPresence} from '../typedefs'
 import styles from './BooleanInput.css'
+import FieldStatus from '@sanity/components/lib/fieldsets/FieldStatus'
+import {FieldPresence} from '@sanity/components/presence'
 
 type Props = {
   type: Type
@@ -13,13 +15,14 @@ type Props = {
   onFocus: () => void
   onChange: (arg0: PatchEvent) => void
   markers: Marker[]
+  presence: FormBuilderPresence[]
 }
 
 export default React.forwardRef(function BooleanInput(props: Props, ref) {
   const handleChange = (event: React.SyntheticEvent<HTMLInputElement>) => {
     props.onChange(PatchEvent.from(set(event.currentTarget.checked)))
   }
-  const {value, type, readOnly, onFocus, markers} = props
+  const {value, type, readOnly, onFocus, markers, presence} = props
   const isCheckbox = type.options && type.options.layout === 'checkbox'
   return (
     <div className={styles.root}>
@@ -48,6 +51,9 @@ export default React.forwardRef(function BooleanInput(props: Props, ref) {
           <ValidationStatus markers={markers} />
         </Switch>
       )}
+      <FieldStatus position="top">
+        <FieldPresence presence={presence} />
+      </FieldStatus>
     </div>
   )
 })
