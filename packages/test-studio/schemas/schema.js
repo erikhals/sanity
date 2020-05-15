@@ -50,6 +50,7 @@ import button from './button'
 import richTextObject from './richTextObject'
 import mux from './mux'
 import review from './review'
+import gallery from './gallery'
 
 export default createSchema({
   name: 'test-examples',
@@ -106,6 +107,7 @@ export default createSchema({
     richTextObject,
     button,
     mux,
-    review
+    review,
+    gallery
   ])
 })
