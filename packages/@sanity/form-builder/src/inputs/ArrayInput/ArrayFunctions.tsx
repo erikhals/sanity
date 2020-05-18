@@ -6,6 +6,7 @@ import {Type} from '../../typedefs'
 import styles from './styles/ArrayInput.css'
 import {ArrayType, ItemValue} from './typedefs'
 import PatchEvent from '../../PatchEvent'
+
 type Props = {
   type: ArrayType
   children: Node | null
@@ -17,18 +18,22 @@ type Props = {
   onCreateValue: (type: Type) => ItemValue
   onChange: (event: PatchEvent) => void
 }
-export default class ArrayFunctions extends React.Component<Props, {}> {
+
+export default class ArrayFunctions extends React.PureComponent<Props, {}> {
   handleDropDownAction = (menuItem: {type: Type}) => {
     this.handleInsertItem(menuItem.type)
   }
+
   handleAddBtnClick = () => {
     this.handleInsertItem(this.props.type.of[0])
   }
+
   handleInsertItem = type => {
     const {onCreateValue, onAppendItem} = this.props
     const item = onCreateValue(type)
     onAppendItem(item)
   }
+
   renderSelectType() {
     const items = this.props.type.of.map(memberDef => ({
       title: memberDef.title || memberDef.type.name,
@@ -40,6 +45,7 @@ export default class ArrayFunctions extends React.Component<Props, {}> {
       </DropDownButton>
     )
   }
+
   render() {
     const {type, readOnly, children} = this.props
     if (readOnly) {

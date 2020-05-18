@@ -4,7 +4,7 @@
   --body-text: var(--gray-darkest);
   --component-bg: var(--white);
   --component-text-color: var(--gray-darkest);
-  --preview-placeholder-color: color(var(--component-bg) contrast(80%) alpha(10%));
+  --preview-placeholder-color: var(--gray-lightest);
   --component-border-color: color(var(--component-bg) contrast(80%) alpha(20%));
   --backdrop-color: color(var(--brand-darkest) alpha(12%));
 

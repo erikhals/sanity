@@ -13,7 +13,7 @@ type Props = {
   onBlur: () => void
   markers: Array<Marker>
 }
-export default class StringInput extends React.Component<Props> {
+export default class StringInput extends React.PureComponent<Props> {
   _input: TextInput | null
   handleChange = (event: React.SyntheticEvent<HTMLInputElement>) => {
     const value = event.currentTarget.value

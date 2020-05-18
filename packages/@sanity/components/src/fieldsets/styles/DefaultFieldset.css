@@ -2,18 +2,8 @@
 @import 'part:@sanity/base/theme/variables-style';
 
 .root {
-  composes: root from 'part:@sanity/components/formfields/default-style';
+  /* composes: root from 'part:@sanity/components/formfields/default-style'; */
   outline: none;
-}
-
-.root .root {
-  /* nested inside itself */
-  margin: 0;
-}
-
-.root + .root {
-  /* Margin between fieldsets */
-  margin-top: var(--medium-padding);
 }
 
 .fieldWrapper {
@@ -87,8 +77,7 @@
 .content {
   position: relative;
   display: block;
-  background-color: var(--fieldset-bg);
-  transition: all 0.1s linear;
+  /* background-color: var(--fieldset-bg); */
 
   @nest .transparent & {
     background-color: transparent;
@@ -165,39 +154,19 @@
   padding: 0;
   user-select: none;
   cursor: default;
-
-  @nest .level2 & {
-    font-size: var(--font-size-base);
-    text-transform: none;
-  }
-
-  @nest .level3 & {
-    font-size: var(--font-size-base);
-    text-transform: none;
-  }
-
-  @nest .level4 & {
-    font-size: var(--font-size-base);
-    text-transform: none;
-  }
-
-  @nest .level5 & {
-    font-size: var(--font-size-base);
-    text-transform: none;
-  }
 }
 
-.legend + .description {
+/* .legend + .description {
   margin-top: calc(var(--small-padding) / 3);
-}
+} */
 
-.legend + .content {
+/* .legend + .content {
   margin-top: var(--small-padding);
-}
+} */
 
-.description + .content {
+/* .description + .content {
   margin-top: var(--small-padding);
-}
+} */
 
 .label {
   padding-right: var(--small-padding);
@@ -209,59 +178,59 @@
 
 .canFocus > .fieldset > .inner > .content,
 .canFocus > .fieldset > .inner > .animateHeight > .content {
-  padding: var(--small-padding);
-  border-radius: var(--border-radius-large);
+  padding-left: var(--small-padding);
+  /* border-radius: var(--border-radius-medium); */
   box-shadow: var(--fieldset-box-shadow);
 
   @media (--screen-medium) {
-    padding: var(--medium-padding);
+    padding-left: var(--medium-padding);
   }
 }
 
 .level1 > .fieldset > .inner > .content,
 .level1 > .fieldset > .inner > .animateHeight > .content {
-  background-color: var(--fieldset-bg);
-  box-shadow: var(--fieldset-box-shadow);
-  padding: var(--small-padding);
-  border: var(--fieldset-border);
-  border-radius: var(--border-radius-large);
+  /* background-color: var(--fieldset-bg); */
+  /* box-shadow: var(--fieldset-box-shadow); */
+  padding-left: var(--small-padding);
+  border-left: var(--fieldset-border);
+  /* border-radius: var(--border-radius-medium); */
 
   @media (--screen-medium) {
-    padding: var(--medium-padding);
+    padding-left: var(--medium-padding);
   }
 }
 
 .level2 > .fieldset > .inner > .content,
 .level2 > .fieldset > .inner > .animateHeight > .content {
-  background-color: var(--fieldset-bg);
-  box-shadow: var(--fieldset-box-shadow);
-  padding: var(--small-padding);
-  border-radius: var(--border-radius-large);
-  border: var(--fieldset-border);
+  /* background-color: var(--fieldset-bg); */
+  /* box-shadow: var(--fieldset-box-shadow); */
+  padding-left: var(--small-padding);
+  /* border-radius: var(--border-radius-medium); */
+  border-left: var(--fieldset-border);
 
   @media (--screen-medium) {
-    padding: var(--medium-padding);
+    padding-left: var(--medium-padding);
   }
 }
 
 .level1:focus > .fieldset > .inner > .content,
 .level1:focus > .fieldset > .inner > .animateHeight > .content {
-  box-shadow: var(--fieldset-box-shadow--focus);
+  /* box-shadow: var(--fieldset-box-shadow--focus); */
 }
 
 .level2:focus > .fieldset > .inner > .content,
 .level2:focus > .fieldset > .inner > .animateHeight > .content {
-  box-shadow: var(--fieldset-box-shadow--focus);
+  /* box-shadow: var(--fieldset-box-shadow--focus); */
 }
 
 .root:not(.level1):focus > .fieldset > .inner > .content,
 .root:not(.level1):focus > .fieldset > .inner > .animateHeight > .content {
-  box-shadow: var(--fieldset-box-shadow--focus);
+  /* box-shadow: var(--fieldset-box-shadow--focus); */
 }
 
 .root:not(.level2):focus > .fieldset > .inner > .content,
 .root:not(.level2):focus > .fieldset > .inner > .animateHeight > .content {
-  box-shadow: var(--fieldset-box-shadow--focus);
+  /* box-shadow: var(--fieldset-box-shadow--focus); */
 }
 
 .debugNestingLevel {

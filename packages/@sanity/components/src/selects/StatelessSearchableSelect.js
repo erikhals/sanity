@@ -175,11 +175,13 @@ export default class StatelessSearchableSelect extends React.PureComponent {
                 {openItemElement && value && (
                   <span className={styles.openItem}>{openItemElement(value)}</span>
                 )}
+
                 {!readOnly && onClear && value && (
                   <button type="button" className={styles.clearButton} onClick={onClear}>
                     <CloseIcon color="inherit" />
                   </button>
                 )}
+
                 {!readOnly && (
                   <div className={styles.arrowAndSpinnerContainer}>
                     {!isLoading && (

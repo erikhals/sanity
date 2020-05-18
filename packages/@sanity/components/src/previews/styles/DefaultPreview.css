@@ -18,25 +18,18 @@
 
 .root {
   position: relative;
-  width: 100%;
   padding: 0;
   user-select: none;
   clear: both;
-  height: 2.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .inner {
-  position: absolute;
   display: flex;
   justify-content: space-between;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2.5em;
-}
-
-.hasSubtitle {
-  /* this is used nested */
+  height: var(--height);
 }
 
 .heading {
@@ -44,6 +37,9 @@
   margin-right: var(--small-padding);
   flex-grow: 1;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .ellipsis {
@@ -54,14 +50,13 @@
 
 .title {
   composes: ellipsis;
-  font-size: 1em;
-  line-height: var(--height);
   color: inherit;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
   font-weight: 400;
   text-transform: none;
   padding: 0;
   margin: 0;
-  max-width: 100%;
 
   @nest .hasSubtitle & {
     line-height: 1.3em;
@@ -72,12 +67,11 @@
   composes: ellipsis;
   color: inherit;
   margin: 0;
-  padding: 0;
-  padding-bottom: 0.25em;
-  line-height: 1.5em;
-  height: 1.5em;
-  font-size: 0.7em;
-  font-weight: 300;
+  padding: 0 0 1px;
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+  font-weight: 400;
+  opacity: 0.75;
 }
 
 .media {
@@ -121,24 +115,23 @@
   composes: root;
 
   @nest & .heading {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding-top: 0.25rem;
+    height: var(--height);
   }
 
   @nest & .title {
     width: 80%;
-    height: 12px;
-    color: transparent;
-    background-color: var(--preview-placeholder-color);
+    max-width: 320px;
+    height: 11px;
+    background-color: currentColor;
+    opacity: 0.1;
   }
 
   @nest & .subtitle {
-    width: 40%;
-    height: 8px;
-    color: transparent;
-    background-color: var(--preview-placeholder-color);
+    width: 50%;
+    max-width: 200px;
+    height: 9px;
+    background-color: currentColor;
+    opacity: 0.1;
     margin-top: 0.5rem;
     padding: 0;
   }

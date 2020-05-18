@@ -215,6 +215,7 @@ class Pane extends React.PureComponent {
             </div>
           </button>
         )}
+
         {action.action === 'toggleTemplateSelectionMenu' && (
           <div className={styles.initialValueTemplateDropDownMenuButton}>
             <DropDownButton
@@ -334,11 +335,13 @@ class Pane extends React.PureComponent {
             <h2 className={styles.title} onClick={this.handleTitleClick}>
               {title}
             </h2>
+
             <div className={styles.actions}>
               {renderActions ? renderActions(actions) : actions.map(this.renderAction)}
               {this.renderMenu()}
             </div>
           </div>
+
           {this.props.renderHeaderViewMenu()}
         </div>
 

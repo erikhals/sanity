@@ -6,9 +6,18 @@
   grid-gap: var(--small-padding);
   grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
 
+  /* reset direction */
+  @nest > * {
+    direction: ltr;
+  }
+
   &[data-buttons='1'] {
-    display: block;
-    grid-template-columns: unset;
+    /* display: block; */
+    /* grid-template-columns: unset; */
+
+    & > * {
+      grid-column: 1 / -1;
+    }
   }
 
   &[data-buttons='4'] {
@@ -16,9 +25,9 @@
   }
 
   /* When buttons are alone */
-  @nest & > * {
+  /* @nest & > * {
     min-width: 6rem;
-  }
+  } */
 
   /* Stretch buttons to fit grid when not alone */
   @nest &:not([data-buttons='1']) > * {
@@ -36,11 +45,6 @@
 .alignEnd {
   composes: root;
   direction: rtl;
-}
-
-/* reset direction */
-.root > * {
-  direction: ltr;
 }
 
 .small {
