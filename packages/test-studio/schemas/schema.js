@@ -28,6 +28,7 @@ import booleans from './booleans'
 import datetime from './datetime'
 import richDateTest from './richDate'
 import slugs from './slugs'
+import spotifyEmbed from './spotifyEmbed'
 import geopoint from './geopoint'
 import fieldsets from './fieldsets'
 import empty from './empty'
@@ -58,6 +59,7 @@ export default createSchema({
     book,
     author,
     species,
+    spotifyEmbed,
     focus,
     strings,
     texts,
