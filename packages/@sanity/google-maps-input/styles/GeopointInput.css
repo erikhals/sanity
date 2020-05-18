@@ -20,9 +20,12 @@
 
 .functions {
   composes: functions from 'part:@sanity/components/fieldsets/default-style';
-  padding-top: var(--small-padding);
+}
+
+.map + .functions {
+  margin-top: var(--small-padding);
 
   @media (--screen-medium) {
-    padding-top: var(--medium-padding);
+    margin-top: var(--medium-padding);
   }
 }
